@@ -1,0 +1,36 @@
+puts "Dado um conjunto de caracteres, você precisará extrair os diamantes ( <>) e as areias ( . ) da expressão e no final exibir a quantidade de diamantes extraídos "
+puts "Expressão <<.<<..>><>><.>.>.<<.>.<.>>>><>><>>"
+
+array = Array.new[36]
+array = ["<","<",".","<","<",".",".",">",">","<",">",">","<",".",">",".",">",".","<","<",".",">",".","<",".",">",">",">",">","<",">",">","<",">",">"]
+
+
+contador = 0 
+
+
+tamanho = array.size
+i = 0
+
+while i<=tamanho
+  valor = array.pop()
+  valor2 = array.pop()
+  valor3 = array.pop()
+  if valor == ">" and valor2 == "<"
+    contador+=1
+  elsif valor2 == ">" and valor3 == "<"
+    contador+=1
+  end
+
+
+
+  i+=1
+
+end
+puts "Foram extraidos #{contador} diamantes"
+
+
+=begin
+while está comparando o tamanho do i com o tamanho do array para ir excluindo com o comando .pop()
+de acordo com o que ele vai excluindo criei uma variavel para receber o ultimo caracter excluido e caso o valor 1 for > e o 2 < ele adiciona no contador, levando em conta que ele comeca a excluir desde o ultimo, e no final ele mostra quantos diamantes foram extraidos 
+=end
+
